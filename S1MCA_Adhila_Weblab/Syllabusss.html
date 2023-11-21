@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> MCA Web Programming Syllabus</title>
+    </head>
+    <body>
+        <h2> Client-Server Model</h2>
+        <p>The Client-server model is a distributed application structure that partitions task or workload between the providers of a resource or service, called servers, and service requesters called clients. In the client-server architecture, when the client computer sends a request for data to the server through the internet, the server accepts the requested process and deliver the data packets requested back to the client. Clients do not share any of their resources. Examples of Client-Server Model are Email, World Wide Web, etc.
+
+            <h3>How the Client-Server Model works ?</h3>
+            In this article we are going to take a dive into the Client-Server model and have a look at how the Internet works via, web browsers. This article will help us in having a solid foundation of the WEB and help in working with WEB technologies with ease. <br>
+            
+                <ul>
+                    <li> Client: When we talk the word Client, it mean to talk of a person or an organization using a particular service. Similarly in the digital world a Client is a computer (Host) i.e. capable of receiving information or using a particular service from the service providers (Servers). </li>
+                      <li>  Servers: Similarly, when we talk the word Servers, It mean a person or medium that serves something. Similarly in this digital world a Server is a remote computer which provides information (data) or access to particular services.</li>
+                                    
+                                    So, its basically the Client requesting something and</li>
+                </ul>
+                 the Server serving it as long as its present in the database.
+            
+        </p>
+
+        <p> How the browser interacts with the servers ?
+            There are few steps to follow to interacts with the servers a client.
+            
+                User enters the URL(Uniform Resource Locator) of the website or file. The Browser then requests the DNS(DOMAIN NAME SYSTEM) Server.
+                DNS Server lookup for the address of the WEB Server.
+                DNS Server responds with the IP address of the WEB Server.
+                Browser sends over an HTTP/HTTPS request to WEB Server’s IP (provided by DNS server).
+                Server sends over the necessary files of the website.
+                Browser then renders the files and the website is displayed. This rendering is done with the help of DOM (Document Object Model) interpreter, CSS interpreter and JS Engine collectively known as the JIT or (Just in Time) Compilers.
+            </p>
+
+            <p>
+              <h2>  Advantages of Client-Server model: </h2> 
+
+    Centralized system with all data in a single place.
+    Cost efficient requires less maintenance cost and Data recovery is possible.
+    The capacity of the Client and Servers can be changed separately.
+
+Disadvantages of Client-Server model:
+
+    Clients are prone to viruses, Trojans and worms if present in the Server or uploaded into the Server.
+    Server are prone to Denial of Service (DOS) attacks.
+    Data packets may be spoofed or modified during transmission.
+    Phishing or capturing login credentials or other useful information of the user are common and MITM(Man in the Middle) attacks are common.
+
+            </p>
+            <h2>What are the components of a web application?</h2>
+            <p>A web application typically consists of several essential components that work together to provide functionality and deliver a seamless user experience. The key components of a web application include:
+
+                1. User Interface (UI): The user interface is the visual and interactive part of the web application that users interact with. It encompasses the layout, design, and controls that allow users to interact with the application and perform various tasks.
+                
+                2. Front-End Development: The front-end of a web application focuses on the client-side rendering and user interaction. It involves technologies like HTML, CSS, and JavaScript to create the user interface and handle user interactions. This includes rendering web pages, validating user input, and handling client-side logic.
+                
+                3. Back-End Development: The back-end of a web application handles the server-side operations and behind-the-scenes functionality. It involves server-side programming languages like PHP, Python, Ruby, or JavaScript (Node.js) to process requests, interact with databases, and perform other server-side operations. The back-end handles data storage, security, business logic, and communication with external services.
+                
+                4. Databases: Web applications often utilize databases to store and manage data. The database stores and retrieves information required by the application, such as user profiles, product details, or other relevant data. Popular database systems include MySQL, PostgreSQL, MongoDB, or Oracle.
+                
+                5. APIs (Application Programming Interfaces): APIs allow web applications to interact with external services, retrieve data, and enable integration with other systems. They provide a standardized way for different applications to communicate and share data. Web applications may consume APIs from external services or provide their own APIs for others to use.
+                
+                6. Security: Web application security is crucial to protect data, prevent unauthorized access, and mitigate potential threats. Security measures may include user authentication and authorization, data encryption, input validation, protection against common vulnerabilities (e.g., Cross-Site Scripting, SQL Injection), and secure communication (HTTPS).
+                
+                7. Testing and Debugging: To ensure the quality and reliability of a web application, testing and debugging are essential components. This includes unit testing, integration testing, and user acceptance testing to identify and fix issues, validate functionality, and optimize performance.
+                
+                8. Deployment and Hosting: Once the web application is developed, it needs to be deployed and hosted on servers or cloud platforms. Deployment involves configuring the application on servers or cloud environments, ensuring scalability, availability, and performance. Hosting providers may offer infrastructure, platform, or software-as-a-service (IaaS, PaaS, SaaS) options.
+                
+                These components work together to create a functional and interactive web application that meets the needs of its users. The specific implementation of these components may vary depending on the technologies and frameworks used in the development process.
+                
+                </p>
+                <h2>Overview of HTTP - HTTP request  response</h2>
+                <p> javatpoint.com
+                    HTTP - HyperText Transfer Protocol - javatpoint
+                    4-5 minutes
+                    
+                        HTTP stands for HyperText Transfer Protocol.
+                        It is a protocol used to access the data on the World Wide Web (www).
+                        The HTTP protocol can be used to transfer the data in the form of plain text, hypertext, audio, video, and so on.
+                        This protocol is known as HyperText Transfer Protocol because of its efficiency that allows us to use in a hypertext environment where there are rapid jumps from one document to another document.
+                        HTTP is similar to the FTP as it also transfers the files from one host to another host. But, HTTP is simpler than FTP as HTTP uses only one connection, i.e., no control connection to transfer the files.
+                        HTTP is used to carry the data in the form of MIME-like format.
+                        HTTP is similar to SMTP as the data is transferred between client and server. The HTTP differs from the SMTP in the way the messages are sent from the client to the server and from server to the client. SMTP messages are stored and forwarded while HTTP messages are delivered immediately.
+                    
+                    Features of HTTP:
+                    
+                        Connectionless protocol: HTTP is a connectionless protocol. HTTP client initiates a request and waits for a response from the server. When the server receives the request, the server processes the request and sends back the response to the HTTP client after which the client disconnects the connection. The connection between client and server exist only during the current request and response time only.
+                        Media independent: HTTP protocol is a media independent as data can be sent as long as both the client and server know how to handle the data content. It is required for both the client and server to specify the content type in MIME-type header.
+                        Stateless: HTTP is a stateless protocol as both the client and server know each other only during the current request. Due to this nature of the protocol, both the client and server do not retain the information between various requests of the web pages.
+                    
+                    HTTP Transactions
+                    Computer Network HTTP
+                    
+                    The above figure shows the HTTP transaction between client and server. The client initiates a transaction by sending a request message to the server. The server replies to the request message by sending a response message.
+                    Messages
+                    
+                    HTTP messages are of two types: request and response. Both the message types follow the same message format.
+                    Computer Network HTTP
+                    
+                    Request Message: The request message is sent by the client that consists of a request line, headers, and sometimes a body.
+                    Computer Network HTTP
+                    
+                    Response Message: The response message is sent by the server to the client that consists of a status line, headers, and sometimes a body
+                    Uniform Resource Locator (URL)
+
+    A client that wants to access the document in an internet needs an address and to facilitate the access of documents, the HTTP uses the concept of Uniform Resource Locator (URL).
+    The Uniform Resource Locator (URL) is a standard way of specifying any kind of information on the internet.
+    The URL defines four parts: method, host computer, port, and path.
+
+
+    Method: The method is the protocol used to retrieve the document from a server. For example, HTTP.
+    Host: The host is the computer where the information is stored, and the computer is given an alias name. Web pages are mainly stored in the computers and the computers are given an alias name that begins with the characters "www". This field is not mandatory.
+    Port: The URL can also contain the port number of the server, but it's an optional field. If the port number is included, then it must come between the host and path and it should be separated from the host by a colon.
+    Path: Path is the pathname of the file where the information is stored. The path itself contain slashes that separate the directories from the subdirectories and files.
+
+
+
+                </p>
+                <h3> What Is a Dynamic Web Page? </h3>
+                <p>A dynamic website is a site that generates pages in real time, responding to dynamic characteristics such as screen size and device type. The structure and content of a dynamic web page are flexible, allowing you to customize the end-user’s experience based on the browser or requests.
+
+                    Dynamic websites respond to user actions to display the relevant content in an appropriate format. The extent of the change the website can handle differs according to the intricacy of the website’s interactive components and the developer’s skill level.
+                    
+                    Dynamic websites are used for a variety of purposes, including social media, photo and video sharing, web applications, and digital commerce websites.
+                
+                
+                    How Dynamic Websites Work
+
+                    A dynamic website requires significant back end complexity to enable front end flexibility. It does not store each page as a separate HTML file—rather, the web server builds the pages when a user requests the page. The server pulls the website’s data from the database (or databases) and constructs a custom HTML file for the user. When the server finishes building the page, it ships the HTML file back to the end-user’s browser.
+                    
+                    Dynamic websites use various client-side and server-side languages to build web pages on the back end. Examples include JavaScript, HTML, and CSS for the client-side and Python, Ruby, and PHP for the server-side. The amount of information pulled to generate the page varies, and the process can be complex. The end-user does not see the back end process, only the resulting web page in the browser. The user experience is similar to that of a static website.
+                    
+                    Crucial data points that dynamic websites can leverage to customize content and functionality include:
+                    
+                        Viewer demographics: Age, gender, interests, and other relevant demographic factors are taken into account to display tailored content to different user segments.
+                        Time of day: Depending on the user’s local time, dynamic websites can showcase special offers, news updates, or relevant messages to further pique their interest.
+                        Location: By identifying users’ geographic locations, the website can show region-specific promotions, facilitate faster delivery options, or list nearby offline stores.
+                        Language settings: Understanding users’ preferred languages allows dynamic websites to present content that is both intuitive and culturally appropriate, increasing the likelihood of conversions.
+                    
+                    Today, most websites are at least partially dynamic, incorporating some level of dynamic content. Social media platforms, news media sites, blogs, web apps, and eCommerce sites all require responsive, interactive content.
+                    Static vs Dynamic Websites
+                    
+                    Static websites store a set number of ready-built files written in client-side languages on a web server. The server returns HTML files based on the user’s URL requests. There is no manipulation of the files before shipping to the client—the page is identical for all users. Static content can still be engaging and interactive, for example, by including buttons, links, and visuals.
+                    
+                    On the other hand, dynamic websites display different content in different formats, depending on the visitor. The time, location, preferences, and other user settings determine the web page’s appearance. This approach enables a customized user experience. While static sites can be effective, dynamic websites can enhance the user experience and appear more professional. However, they require more skill and complexity to develop.
+                    
+                    “E-commerce“
+                
+                </p>
+
+                <h3>Application Server</h3>
+                <p> Application server contains Web and EJB containers. It can be used for servlet, jsp, struts, jsf, ejb etc. It is a component based product that lies in the middle-tier of a server centric architecture.
+
+                    It provides the middleware services for state maintenance and security, along with persistence and data access. It is a type of server designed to install, operate and host associated services and applications for the IT services, end users and organizations.
+                    
+                    The block diagram representation of Application Server is shown below:</p>
+                <img src="https://static.javatpoint.com/servletpages/servletterminology/images/server-web-vs-application2.png">
+                <br>
+                The Example of Application Servers are:
+                <ol>
+                    <li>JBoss: Open-source server from JBoss community. </li>
+                    <li>Glassfish: Provided by Sun Microsystem. Now acquired by Oracle.</li>
+                    <li>Weblogic: Provided by Oracle. It more secured.</li>
+                    <li>Websphere: Provided by IBM.</li>
+                </ol>
+                <h3>Web Security Considerations</h3>
+                <p>Web Security is very important nowadays. Websites are always prone to security threats/risks. Web Security deals with the security of data over the internet/network or web or while it is being transferred to the internet. For e.g. when you are transferring data between client and server and you have to protect that data that security of data is your web security.
+
+                    Hacking a Website may result in the theft of Important Customer Data, it may be the credit card information or the login details of a customer or it can be the destruction of one’s business and propagation of illegal content to the users while somebody hacks your website they can either steal the important information of the customers or they can even propagate the illegal content to your users through your website so, therefore, security considerations are needed in the context of web security.
+                
+                    <h4>Security Threats:</h4>
+                    A Threat is nothing but a possible event that can damage and harm an information system. Security Threat is defined as a risk that which, can potentially harm Computer systems & organizations. Whenever an Individual or an Organization creates a website, they are vulnerable to security attacks. <br>
+
+Security attacks are mainly aimed at stealing altering or destroying a piece of personal and confidential information, stealing the hard drive space, and illegally accessing passwords. So whenever the website you created is vulnerable to security attacks then the attacks are going to steal your data alter your data destroy your personal information see your confidential information and also it accessing your password.
+                
+<h4>Top Web Security Threats :</h4>
+Web security threats are constantly emerging and evolving, but many threats consistently appear at the top of the list of web security threats. These include:
+<ul>
+    <li>Cross-site scripting (XSS)</li>
+    <li>SQL Injection</li>
+    <li>Phishing</li>
+    <li>Ransomware</li>
+    <li>Code Injection</li>
+    <li>Viruses and worms</li>
+    <li>Spyware</li>
+    <li>Denial of Service</li>
+</ul>
+<h4>Security Consideration:</h4>
+<ul>
+    <li>Updated Software: You need to always update your software. Hackers may be aware of vulnerabilities in certain software, which are sometimes caused by bugs and can be used to damage your computer system and steal personal data. Older versions of software can become a gateway for hackers to enter your network. Software makers soon become aware of these vulnerabilities and will fix vulnerable or exposed areas. That’s why It is mandatory to keep your software updated, It plays an important role in keeping your personal data secure.</li>
+    <li>Beware of SQL Injection: SQL Injection is an attempt to manipulate your data or your database by inserting a rough code into your query. For e.g. somebody can send a query to your website and this query can be a rough code while it gets executed it can be used to manipulate your database such as change tables, modify or delete data or it can retrieve important information also so, one should be aware of the SQL injection attack.</li>
+    <li>Cross-Site Scripting (XSS): XSS allows the attackers to insert client-side script into web pages. E.g. Submission of forms. It is a term used to describe a class of attacks that allow an attacker to inject client-side scripts into other users’ browsers through a website. As the injected code enters the browser from the site, the code is reliable and can do things like sending the user’s site authorization cookie to the attacker.</li>
+    <li>Error Messages: You need to be very careful about error messages which are generated to give the information to the users while users access the website and some error messages are generated due to one or another reason and you should be very careful while providing the information to the users. For e.g. login attempt – If the user fails to login the error message should not let the user know which field is incorrect: Username or Password.</li>
+    <li>Data Validation: Data validation is the proper testing of any input supplied by the user or application. It prevents improperly created data from entering the information system. Validation of data should be performed on both server-side and client-side. If we perform data validation on both sides that will give us the authentication. Data validation should occur when data is received from an outside party, especially if the data is from untrusted sources.</li>
+    <li>Password: Password provides the first line of defense against unauthorized access to your device and personal information. It is necessary to use a strong password. Hackers in many cases use sophisticated software that uses brute force to crack passwords. Passwords must be complex to protect against brute force. It is good to enforce password requirements such as a minimum of eight characters long must including uppercase letters, lowercase letters, special characters, and numerals.</li>
+</ul>
+
+                </p>
+               
+                </body>
+</html>

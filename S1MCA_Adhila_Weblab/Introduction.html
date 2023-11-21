@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction To Web</title>
+</head>
+<style>
+    body{
+        margin: 100PX;
+    }
+    img
+    {
+        align-self:center;
+    }
+    P{
+        text-align: justify;
+    }
+</style>
+<body>
+    <center>
+        <h1>
+            INTRODUCTION TO WEB
+       </h1> </center>
+       <font size="5"><b> 
+<ol>
+
+    <li>    <a href="#client">Client/Server Concepts</a> </li>
+    <li><a href="#wcomponents">Components Of Web Application</a></li>
+    <li><a href="#wtypes">Types Of Web Contentsv</li>
+    <li><a href="#httpoverview">Overview OF HTTP </a>
+        <ol type="i">
+            <li><a href="#httprequest">HTTP Request</a></li>
+            <li><a href="#httpresponse">HTTP Response</a></li>
+        </ol>
+    </li>
+    <li><a href="#generation">Genenation Of Dynamic Wed Pages</a></li>
+    <li><a href="#appserver">Application Servers </a></li>
+    <li><a href="#wsecurity">Web Security</a></li>
+</oL></b></font><br>
+<dl>
+    <dt>  <h2 id="client">Client/Server Concepts</h2></dt>
+    <dd>
+        <b><big>What is client-server?</big></b>
+         <br><br>
+        <img src="https://cdn.ttgtmedia.com/rms/onlineimages/client_and_server_requests_and_responses-f.png">
+        <br><p>
+        Client-server is a relationship in which one program, the client, requests a service or resource from another program, the server. The label client-server was previously used to distinguish distributed computing by PCs from the monolithic, centralized computing model used by mainframes.
+        Today, computer transactions in which the server fulfills a request made by a client are very common. The client-server model has become one of the central ideas of network computing. In this context, the client establishes a connection to the server over a LAN or WAN, such as the internet.
+        Once the server fulfils the client's request, the connection terminates. Because multiple client programs share the services of the same server program, a special server called a daemon might activate to await client requests.
+    </p><p>
+        In the early days of the internet, most network traffic traveled through what is known as north-south traffic. This is when data moves between remote clients that request web content and data center servers that provide the content. Today, with the maturity of virtualization and cloud computing, network traffic is more likely to flow server-to-server -- a pattern known as east-west traffic.
+        Depiction of client and server requesting and receiving information.
+    </p><p>
+        In the client-server model, clients request information from servers, and servers send information back to clients.
+        This has changed the focus of network administration from a centralized security model designed to protect the network perimeter to a decentralized security model that controls individual user access to services and data. Network professionals also audit network behavior to ensure compliance with policies and regulations.
+    </p><p><b>
+        Advantages and disadvantages of the client-server model</b>
+        An important advantage of the client-server model is that its centralized architecture makes it easier to protect data with access controls enforced by security policies. It also doesn't matter if the clients and the server exist on the same operating system because data transfers through platform-agnostic client-server protocols.
+        An important disadvantage of the client-server model is that if too many clients simultaneously request data, the server could become overloaded. This can cause network congestion or result in a denial of service.
+    </p><p><b>
+        Client-server protocols</b>
+        Clients typically communicate with servers by using the TCP/IP protocol suite. TCP is a connection-oriented protocol, which means the protocol establishes and maintains connections until the application programs at each end have finished exchanging messages. TCP protocols help with the following: 
+        <br>
+        Determines how to break application data into packets.
+       <br> Sends packets to and accepts packets from the network layer.
+       <br> Manages traffic flow control.
+        <br>Handles retransmission of dropped or garbled packets.
+        <br>Acknowledges all packets that arrive in the network.
+        <br>In the Open Systems Interconnection (OSI) communication model, TCP covers parts of Layer 4, the transport layer, and parts of Layer 5, the session layer.
+        By contrast IP is a connectionless protocol, which means endpoints don't continue to communicate following the initial transmission because there is no connection. The internet treats each packet that travels through the network as an independent unit of data without any relation to any other unit, while TCP organizes packets in the correct order. In the OSI communication model, IP is in Layer 3, the network layer.
+        </p>
+    </dd>
+    <dt><h2 id="wcomponents">Components Of Web Application</h2></dt>
+    <dd>
+        <p> Web application architecture comes with two types of web application architecture: Structural components, and user interface app components.
+        </p>
+<ul> <li>Structural Components: </li></ul>        
+
+As the name suggests, these components make the structure of the application. These components include the client or web browser, database server, and web app server which are directly responsible for functions deciding the user interactions within the application. In the majority of cases, JavaScript, CSS, and HTML are used to create these components. However, it all varies with the web app developer.
+<ul> <li>User Interface Components:</li></ul>
+The other one is the user interface components that contribute to the visual interface of the app. However, unlike structural components, that do not interact with the architecture, but are limited to displaying the web page. These components include a dashboard, widget, settings, notifications, and many other visual elements that help in making the user experience better. In other words, these components are directly responsible for the UX or the web app.
+    </dd>
+    <dt>   <h2 id="wtypes">Types Of Web Contents</h2></dt>
+    <dd>
+        Most popular types of content
+        The best websites create a mix of different content types to keep their readers interested. While there are hundreds of different types of web content, these 50 in-particular are our favorite types of digital content.
+              <ol>
+                <li>
+                    Articles <br>
+                    This type of web content develops an idea and incorporates interviews, quotes, and data to support the article’s hypothesis. Articles are usually long-form content, between 1,000 and 3,000 words.
+                            
+                </li>
+                <li>
+                    Blog posts
+                    Blog posts typically range between 500 and 750 words, focusing on a variety of topics. Some of these topics can include news in the industry, bios of industry leaders, reviews of new products, and more.         
+                </li>
+                <li>
+                    Surveys
+                    Adding surveys to your content arsenal can gauge your readers’ interest and to increase reader engagement with your brand. Surveys are also fun for the reader and is one of the more interactive content types.            
+                </li>
+            <li>
+Website content
+        Website content encompasses many content types. This can include website pages detailing your individual services, products, people, locations, etc.
+    </li>
+    <li>       
+       Guest blogs or posts
+        Find guest writers from notable people in your industry, writers of other blogs or websites that focus on your topic, or on social media pages or groups related to your topic. Adding a few posts by guest writers adds a new voice to your pages and helps to bring in new readers to your website.
+    </li>
+    <li>
+       Interviews
+        First person interviews with people actively involved in your topic is a way to share different points of view with your readers and expand their knowledge of your topic. You can ask readers to submit questions in advance to increase your user engagement.
+    </li>
+    <li>
+       E-books
+        Having an e-book that your readers can download, or read directly on your site, can expand on your regular content types with more in-depth information. Promoting an e-book is an excellent way to promote your company as an expert in your field.
+    </li>
+    <li>
+             E-courses
+        E-courses are designed to teach your reader about your topic. Generally divided into several sections, the reader can complete one each day or week. This type of post is another good way to get readers to return to your site.
+    </li>
+    <li> 
+        Research and data
+        Recent statistics and research can make for interesting content and help your site provide industry-leading resources for your readers.
+    </li>
+    <li>
+        Maps
+        Maps are useful to illustrate where a user can find an attraction, business or other sites.
+       
+    </li>
+    <li>  
+    Social media posts
+        Posts on Facebook, Twitter, Instagram and LinkedIn are generally shorter versions of the content on your website. You can include a link to your longer content, so readers can learn more if they are interested in your topic.
+    </li>
+    <li>  
+      Podcasts
+        Podcasts are increasingly popular. These might be interviews or instructional talks and work to support your other marketing efforts.  
+    </li>
+</ol>
+    </dd>
+    <dt><h2 id="httpoverview" >Overview OF HTTP</h2>
+        <dd>
+            <p>HTTP is a protocol for fetching resources such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is reconstructed from the different sub-documents fetched, for instance, text, layout description, images, videos, scripts, and more.</p>
+            <img src="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview/fetching_a_page.png" alt="image">
+            <p>Clients and servers communicate by exchanging individual messages (as opposed to a stream of data). The messages sent by the client, usually a Web browser, are called requests and the messages sent by the server as an answer are called responses.Designed in the early 1990s, HTTP is an extensible protocol which has evolved over time. It is an application layer protocol that is sent over TCP, or over a TLS-encrypted TCP connection, though any reliable transport protocol could theoretically be used. Due to its extensibility, it is used to not only fetch hypertext documents, but also images and videos or to post content to servers, like with HTML form results. HTTP can also be used to fetch parts of documents to update Web pages on demand.</p>
+        </dd>
+        <dl>
+            <dt> <h3 id="httprequest" >HTTP Request</h3></dt>
+            <dd> <P>Think about an HTTP request as your browser connecting to the server and either asking for a specific resource or sending data to it. There are several types of HTTP request methods, which completely alter the type of response that you get from the server. The most common ones are:
+            </P>
+            <UL><LI> 
+                GET. This is the most frequently used HTTP request method by far. A GET request asks the server for a specific piece of information or resource. When you connect to a website, your browser usually sends several GET requests to receive the data that it needs for the page to load.
+            </LI><LI> HEAD. With a HEAD request, you only receive the header information of the page that you want to load. You can use this type of HTTP request to find out the size of a document before you download it using GET.
+            </LI><LI>  POST. Your browser uses the POST HTTP request method when it needs to send data to the server. For example, if you fill out a contact form on a website and submit it, you’re using a POST request so the server receives that information.
+            </LI><LI> PUT. PUT requests are similar in functionality to the POST method. However, instead of submitting data, you use PUT requests to update information that already exists on the end server.
+           </LI> </UL>  <P>   There are some other types of HTTP requests that you can use, including the DELETE, PATCH, and OPTIONS methods. However, they’re relatively uncommon in day-to-day use.
+            
+                Submitting an HTTP request involves sending a message to the receiving server in a specific format. The server returns a response and the client takes action accordingly. For instance, it may load resources or re-direct you to another page.
+                
+                When you get an HTTP error, it’s usually because the server can’t fulfill your request. The error code that you get should explain why. Some of the most common causes of HTTP errors include being unable to connect to the server and find the resources that have been requested.
+            </P>  
+                 </dd>
+            <dt><h3 id="httpresponse">HTTP Response</h3></dt>
+            <dd>
+                HTTP Response sent by a server to the client. The response is used to provide the client with the resource it requested. It is also used to inform the client that the action requested has been carried out. It can also inform the client that an error occurred in processing its request.
+
+An HTTP response contains the following things:
+<UL><LI>
+Status Line </LI>
+<LI>Response Header Fields or a series of HTTP headers</LI><li>
+Message Body</LI></UL>
+In the request message, each HTTP header is followed by a carriage returns line feed (CRLF). After the last of the HTTP headers, an additional CRLF is used and then begins the message body.
+            </dd>
+        </dl>
+    </dt>
+
+
+    <dt><h2 id="generation">Genenation Of Dynamic Wed Pages</h2></dt>
+    <dd>
+        <p>A dynamic web page is a web page constructed at runtime (during software execution), as opposed to a static web page, delivered as it is stored. A server-side dynamic web page is a web page whose construction is controlled by an application server processing server-side scripts. In server-side scripting, parameters determine how the assembly of every new web page proceeds, and including the setting up of more client-side processing. A client-side dynamic web page processes the web page using JavaScript running in the browser as it loads. JavaScript can interact with the page via Document Object Model (DOM), to query page state and modify it. Even though a web page can be dynamic on the client-side, it can still be hosted on a static hosting service such as GitHub Pages or Amazon S3 as long as there is not any server-side code included.
+
+            A dynamic web page is then reloaded by the user or by a computer program to change some variable content. The updating information could come from the server, or from changes made to that page's DOM. This may or may not truncate the browsing history or create a saved version to go back to, but a dynamic web page update using AJAX technologies will neither create a page to go back to, nor truncate the web browsing history forward of the displayed page. Using AJAX, the end user gets one dynamic page managed as a single page in the web browser while the actual web content rendered on that page can vary. The AJAX engine sits only on the browser requesting parts of its DOM, the DOM, for its client, from an application server. A particular application server could offer a standardized REST style interface to offer services to the web application.[1]
+            
+            DHTML is the umbrella term for technologies and methods used to create web pages that are not static web pages, though it has fallen out of common use since the popularization of AJAX, a term which is now itself rarely used. Client-side-scripting, server-side scripting, or a combination of these make for the dynamic web experience in a browser.</p>
+<p>
+    It is difficult to be precise about "dynamic web page beginnings" or chronology because the precise concept makes sense only after the "widespread development of web pages". HTTP has existed since 1989, HTML, publicly standardized since 1996. The web browser's rise in popularity started with Mosaic in 1993. Between 1995 and 1996 Coldfusion, WebObjects, PHP and Active Server Pages were introduced to the market.
+
+The introduction of JavaScript (then known as LiveScript) enabled the production of client-side dynamic web pages, with JavaScript code executed in the client's browser.[3] The letter "J" in the term AJAX originally indicated the use of JavaScript, as well as XML. With the rise of server side JavaScript processing, for example, Node.js, originally developed in 2009, JavaScript is also used to dynamically create pages on the server that are sent fully formed to clients.
+
+MediaWiki, the content management system that powers Wikipedia, is an example for an originally server-side dynamic web page, interacted with through form submissions and URL parameters. Throughout time, progressively enhancing extensions such as the visual editor have also added elements that are dynamic on the client side, while the original dynamic server-side elements such as the classic edit form remain available to be fallen back on (graceful degradation) in case of error or incompatibility.
+</p>
+        </dd>
+    <dt><h2 id="appserver">Application Servers </h2></dt>
+    <dd>
+        <p>Application Server is a type of server designed to install, operate, and host applications. In the early days of application servers, there was a huge growth in the number of applications brought to the Internet. Those applications became bigger and bigger with the demand for adding more and more functionalities to the application and become more complex to run and maintain. There was a need for some kind of program on the network while it will share application capabilities in an efficient and organized manner.</p>
+        <p>
+            An application server is a program that resides on the server-side, and it’s a server programmer providing business logic behind any application. This server can be a part of the network or the distributed network.
+
+Now, if we would like to know the purpose of a server program, it goes this way:
+
+Ideally, server programs are used to provide their services to the client program that either resides on the same machine or lies on a network.
+
+They are basically used in a web-based application that has 3 tier architecture. The position at which the application server fits in is described below:
+<ul><li>
+    
+Tier 1 : This is a GUI interface that resides at the client end and is usually a thin client (e.g. browser)
+</li><li>Tier 2 : This is called the middle tier, which consists of the Application Server.
+</li><li>Tier 3 : This is the 3rd tier which is backend servers. E.g., a Database Server.As we can see, they usually communicate with the webserver for serving any request that is coming from clients.
+</li></ul>
+<img src="https://cdn.educba.com/academy/wp-content/uploads/2019/04/What-is-Application-Server-1.1.png" alt="image">
+The client first makes a request, which goes to the webserver. The web server then sends it to the middle tier, i.e. the application server, which further gets the information from 3rd tier (e.g. database server) and sends it back to the webserver. The web server further sends back the required information to the client. Different approaches are being utilized to process requests through the web servers, and some of them are approaches like JSP (Java server pages), CGI, ASP (Active Server Pages), Java Scripts, Java servlets, etc.
+        </p>
+    </dd>
+    <dt><h2 id="wsecurity">Web Security</h2></dt>
+    <dd>
+      <p>  Web Security is very important nowadays. Websites are always prone to security threats/risks. Web Security deals with the security of data over the internet/network or web or while it is being transferred to the internet. For e.g. when you are transferring data between client and server and you have to protect that data that security of data is your web security.
+
+Hacking a Website may result in the theft of Important Customer Data, it may be the credit card information or the login details of a customer or it can be the destruction of one’s business and propagation of illegal content to the users while somebody hacks your website they can either steal the important information of the customers or they can even propagate the illegal content to your users through your website so, therefore, security considerations are needed in the context of web security.
+</p><p>
+
+<b>
+Security Threats:</b> <BR>
+A Threat is nothing but a possible event that can damage and harm an information system. Security Threat is defined as a risk that which, can potentially harm Computer systems & organizations. Whenever an Individual or an Organization creates a website, they are vulnerable to security attacks.
+
+Security attacks are mainly aimed at stealing altering or destroying a piece of personal and confidential information, stealing the hard drive space, and illegally accessing passwords. So whenever the website you created is vulnerable to security attacks then the attacks are going to steal your data alter your data destroy your personal information see your confidential information and also it accessing your password.
+</p> 
+<P><B> 
+Top Web Security Threats :</B><BR>
+Web security threats are constantly emerging and evolving, but many threats consistently appear at the top of the list of web security threats. These include:
+</P>
+<UL><LI>
+</LI><LI>Cross-site scripting (XSS)
+</LI><LI>SQL Injection
+</LI><LI>Phishing
+</LI><LI>Ransomware
+</LI><LI>Code Injection
+</LI><LI>Viruses and worms
+</LI><LI>Spyware
+</LI><LI>Denial of Service
+</LI></UL>
+<P>
+    <B>
+Security Consideration:</B> <BR>
+    <UL>
+        <LI>
+            Updated Software: You need to always update your software. Hackers may be aware of vulnerabilities in certain software, which are sometimes caused by bugs and can be used to damage your computer system and steal personal data. Older versions of software can become a gateway for hackers to enter your network. Software makers soon become aware of these vulnerabilities and will fix vulnerable or exposed areas. That’s why It is mandatory to keep your software updated, It plays an important role in keeping your personal data secure.
+
+        </LI>
+        <LI>Beware of SQL Injection: SQL Injection is an attempt to manipulate your data or your database by inserting a rough code into your query. For e.g. somebody can send a query to your website and this query can be a rough code while it gets executed it can be used to manipulate your database such as change tables, modify or delete data or it can retrieve important information also so, one should be aware of the SQL injection attack.
+        </LI>
+        <LI>Cross-Site Scripting (XSS): XSS allows the attackers to insert client-side script into web pages. E.g. Submission of forms. It is a term used to describe a class of attacks that allow an attacker to inject client-side scripts into other users’ browsers through a website. As the injected code enters the browser from the site, the code is reliable and can do things like sending the user’s site authorization cookie to the attacker.
+        </LI>
+        <LI>Error Messages: You need to be very careful about error messages which are generated to give the information to the users while users access the website and some error messages are generated due to one or another reason and you should be very careful while providing the information to the users. For e.g. login attempt – If the user fails to login the error message should not let the user know which field is incorrect: Username or Password.
+        </LI>
+        <LI>Data Validation: Data validation is the proper testing of any input supplied by the user or application. It prevents improperly created data from entering the information system. Validation of data should be performed on both server-side and client-side. If we perform data validation on both sides that will give us the authentication. Data validation should occur when data is received from an outside party, especially if the data is from untrusted sources.
+        </LI>
+        <LI>Password: Password provides the first line of defense against unauthorized access to your device and personal information. It is necessary to use a strong password. Hackers in many cases use sophisticated software that uses brute force to crack passwords. Passwords must be complex to protect against brute force. It is good to enforce password requirements such as a minimum of eight characters long must including uppercase letters, lowercase letters, special characters, and numerals.
+        </LI>
+    </UL>
+    </B>
+</P>
+</dd>
+</dl>
+
+   
+
+   
+  
+   
+   
+   
+
+
+</body>
+</html>
