@@ -39,7 +39,8 @@ void DeleteBeg()
 		{
 			temp=temp->next;
 		}
-		temp->next=head->next
+		temp->next=head->next;
+		temp=head;
 		head=head->next;
 		printf("\n %d is deleted ",temp->data);
 		free(temp);
@@ -99,7 +100,8 @@ void DeleteAtPos()
 				{
 					temp=temp->next;
 				}
-				temp->next=head->next
+				temp->next=head->next;
+				temp=head;
 				head=head->next;
 				printf("\n %d is deleted ",temp->data);
 				free(temp);
@@ -128,8 +130,9 @@ void Display()
 		printf("\n Empty Linked list !!!");
 	else
 	{
+		struct node *temp;
 		temp=head;
-		while(temp->next!=NULL)
+		while(temp->next!=head)
 		{
 			printf("%d  ",temp->data);
 			temp=temp->next;
@@ -167,3 +170,4 @@ do
  }
  }
  while(1);
+ }
