@@ -41,7 +41,7 @@ void search()
 		printf("\n Enter the elements to be searched : ");
 		scanf("%d",&item);
 		temp=head;
-		f=0;
+		int f=0;
 		int i=0;
 		while(temp!=NULL)
 		{

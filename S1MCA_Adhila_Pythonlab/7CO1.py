@@ -29,10 +29,8 @@ else:
 s=0
 print("The same elements in the list are : ")
 for x in list1:
-    for y in list2:
-        if x==y:
-            print(x)
-        else:
+        if x in list2:
+            print(x,end=" ")
             s=int(s)+1
-if s!=0:
+if s==0:
     print("The list have no common elements ")

@@ -74,7 +74,8 @@ void DeleteEnd()
 			printf("\n %d is deleted ",temp->data);
 			free(temp);
 		}
-	}
+		size--;
+	}	
 }
 
 void DeleteAtPos()
@@ -92,19 +93,30 @@ void DeleteAtPos()
 	 	{
 	 		int i=1;
 	 		temp=head;
-	 		while(i<pos-1)
+	 		if(pos==1)
 	 		{
-	 		temp=temp->next;
-	 		i++;
+	 			head=head->next;
+				head->prev=NULL;
+				printf("\n %d is deleted ",temp->data);
+				free(temp);
 	 		}
-			struct node *delnode;
+	 		else
+	 		{
+		 		while(i<pos-1)
+		 		{
+			 		temp=temp->next;
+	 				i++;
+	 			}
+				struct node *delnode;
 			
-			delnode=temp->next;
-			temp->next=delnode->next;
-			delnode->next->prev=temp;
-			printf("\n %d is deleted ",delnode->data);
-			free(delnode);
-	 	}
+				delnode=temp->next;
+				temp->next=delnode->next;
+				delnode->next->prev=temp;
+				printf("\n %d is deleted ",delnode->data);
+				free(delnode);
+			}
+			size--;
+	 	}	
 	}
 }
 

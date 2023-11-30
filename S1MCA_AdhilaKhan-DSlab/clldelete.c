@@ -11,24 +11,23 @@ void Insert()
 {
 	struct node *newnode;
 	newnode=(struct node*)malloc(sizeof(struct node));
-	newnode->next=NULL;
+	newnode->next=newnode;
 	printf("\n Enter the element :");
 	scanf("%d",&newnode->data);
 	if(head==NULL)
 	       head=newnode;
 	 else
 	 {
-
 	 	temp=head;
-	 	while(temp->next!=NULL)
+	 	while(temp->next!=head)
 		{
 			temp=temp->next;
 		}
 	 	temp->next=newnode;
+		newnode->next=head;
 	 }
 	 size++;
 }
-
 void DeleteBeg()
 {
 	if(head==NULL)
@@ -36,6 +35,11 @@ void DeleteBeg()
 	else
 	{
 		temp=head;
+		while(temp->next!=head)
+		{
+			temp=temp->next;
+		}
+		temp->next=head->next
 		head=head->next;
 		printf("\n %d is deleted ",temp->data);
 		free(temp);
@@ -49,10 +53,10 @@ void DeleteEnd()
 		printf("\n The linked list is empty!!!");
 	else
 	{
-		if(head->next==NULL)
+		if(head->next==head)
 		{
 			temp=head;
-			head=head->next;
+			head=NULL;
 			printf("\n %d is deleted ",temp->data);
 			free(temp);
 		}
@@ -60,16 +64,16 @@ void DeleteEnd()
 		{
 			struct node *prev;
 			temp=head;
-			while(temp->next!=NULL)
+			while(temp->next!=head)
 			{
 				prev=temp;
 				temp=temp->next;
 			}
-			prev->next=NULL;
+			prev->next=head;
 			printf("\n %d is deleted ",temp->data);
 			free(temp);
 		}
-			size--;
+		size--;
 	}
 }
 
@@ -90,24 +94,30 @@ void DeleteAtPos()
 	 		temp=head;
 	 		if(pos==1)
 	 		{
+	 			temp=head;
+				while(temp->next!=head)
+				{
+					temp=temp->next;
+				}
+				temp->next=head->next
 				head=head->next;
 				printf("\n %d is deleted ",temp->data);
 				free(temp);
 	 		}
 	 		else
 	 		{
-	 			while(i<pos-1)
-	 			{
-	 				temp=temp->next;
-	 				i++;
-	 			}
+		 		while(i<pos-1)
+		 		{
+			 		temp=temp->next;
+			 		i++;
+		 		}
 				struct node *delnode;
 				delnode=temp->next;
 				temp->next=delnode->next;
 				printf("\n %d is deleted ",delnode->data);
 				free(delnode);
 			}
-				size--;
+			size--;
 	 	}
 	}
 }
@@ -157,4 +167,3 @@ do
  }
  }
  while(1);
- } 

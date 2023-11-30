@@ -11,14 +11,20 @@ void InsertBeg()
 {
 	struct node *newnode;
 	newnode=(struct node*)malloc(sizeof(struct node));
-	newnode->next=NULL;
+	newnode->next=newnode;
 	printf("\n Enter the element :");
 	scanf("%d",&newnode->data);
 	if(head==NULL)
 	       head=newnode;
 	 else
 	 {
-	 	newnode->next=head;
+		newnode->next=head;
+		struct node *temp=head;
+		while(temp->next!=head)
+		{
+			temp=temp->next;
+		}
+	 	temp->next=newnode;
 	 	head=newnode;
 	 }
 	 size++;
@@ -27,7 +33,7 @@ void InsertEnd()
 {
 	struct node *newnode;
 	newnode=(struct node*)malloc(sizeof(struct node));
-	newnode->next=NULL;
+	newnode->next=newnode;
 	printf("\n Enter the element :");
 	scanf("%d",&newnode->data);
 	if(head==NULL)
@@ -36,11 +42,12 @@ void InsertEnd()
 	 {
 	 	struct node *temp;
 	 	temp=head;
-	 	while(temp->next!=NULL)
+	 	while(temp->next!=head)
 		{
 			temp=temp->next;
 		}
 	 	temp->next=newnode;
+		newnode->next=head;
 	 }
 	 size++;
 }
@@ -48,8 +55,9 @@ void InsertAtPos()
 {
 	int pos;
 	struct node *newnode;
+	struct node *temp;
 	newnode=(struct node*)malloc(sizeof(struct node));
-	newnode->next=NULL;
+	newnode->next=newnode;
 	if(head==NULL)
 		printf("\n Empty Linked List !!");
 	else{
@@ -65,11 +73,16 @@ void InsertAtPos()
 			 	{
 				 	newnode->next=head;
 				 	head=newnode;
+					temp=head;
+					while(temp->next!=head)
+					{
+						temp=temp->next;
+					}
+	 				temp->next=newnode;
 			 	}
 			 	else
 			 	{
 				 	int i=1;
-				 	struct node *temp;
 				 	temp=head;
 				 	while(i<pos-1)
 					{
@@ -78,7 +91,10 @@ void InsertAtPos()
 					}
 					newnode->next=temp->next;
 				 	temp->next=newnode;
-				
+					if(pos==size+1)
+					{
+						newnode->next=head;
+					}
 			 	}
 			 }
 			 size++;
@@ -92,7 +108,7 @@ void Display()
 	{
 		struct node *temp;
 		temp=head;
-		while(temp->next!=NULL)
+		while(temp->next!=head)
 		{
 			printf("%d  ",temp->data);
 			temp=temp->next;

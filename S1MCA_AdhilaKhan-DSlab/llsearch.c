@@ -32,21 +32,31 @@ void Insert()
 void search()
 {
 	int item;
-	printf("\n Enter the elements to be searched : ");
-	scanf("%d",&item);
-	temp=head;
-	int i=0;
-	while(temp!=NULL)
+	if(head==NULL)
+		printf("\n Empty Linked list !!!");
+	else
 	{
-		i++;
-		if(temp->data==item)
+		printf("\n Enter the elements to be searched : ");
+		scanf("%d",&item);
+		temp=head;
+		int f=0;
+		int i=0;
+		while(temp!=NULL)
 		{
-			printf("\n The item is found  as the %d th node in the list ",i);
-			break;
+			i++;
+			if(temp->data==item)
+			{
+				printf("\n The item is found  as the %d th node in the list ",i);
+				f=1;
+				break;
+			}
+			temp=temp->next;
 		}
-		temp=temp->next;
+		if(f==0)
+			printf("\n Node not found !!");
 	}
 }
+
 
 void Display()
 {
