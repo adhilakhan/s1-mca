@@ -53,6 +53,7 @@ void display(struct node *Root)
 	}
 
 }
+
 void inorder(struct node *Root)
 {
 	if(Root!=NULL)
@@ -63,12 +64,14 @@ void inorder(struct node *Root)
 	}
 
 }
+
+
 void preorder(struct node *Root)
 {
 	if(Root!=NULL)
 	{
-		preorder(Root->left);
 		printf("%d   ",Root->data);
+		preorder(Root->left);
 		preorder(Root->right);
 	}
 
@@ -78,13 +81,14 @@ void postorder(struct node *Root)
 	if(Root!=NULL)
 	{
 		postorder(Root->left);
-		printf("%d   ",Root->data);
 		postorder(Root->right);
+		printf("%d   ",Root->data);
 	}
 
 }
-void delete(struct node *Root)
+delete(struct node *Root)
 {
+
 }
 
 int main()
@@ -110,7 +114,9 @@ int main()
 						insert(root,val);
              			    	break;
              		 case 2:
-             		 		delete(root);
+             		 		printf("\n Enter the data : ");
+					scanf("%d",&val);	
+             		 		delete(root,val);
              				break;
              		 case 3:
              		 		if(root==NULL)
@@ -121,29 +127,28 @@ int main()
              		 			if(search(root,val)==NULL)
              		 				printf("\n Item not found");
              		 			else
-             		 				printf("\n Item not found");
+             		 				printf("\n Item found");
              				break;
              		case 4:
-             		 		printf("\n a. Inorder \n b. Preorder \n c. Postorder\n Choose any one of the travesal option : ");
-             		 		char op; 
-             		 		scanf("%d",&op);
+             		 		printf("\n 1. Inorder \n 2. Preorder \n 3. Postorder\n Choose any one of the travesal option : ");
+             		 		int op; 
+           				scanf("%d",&op);
              		 		switch(op)
              		 		{
-             		 			case 'a':
+             		 			case 1:
              		 					inorder(root);
              		 					break;
-             		 			case 'b':
+             		 			case 2:
              		 					preorder(root);
              		 					break;
-             		 			case 'c':
+             		 			case 3:
              		 					postorder(root);
              		 					break;
              		 			default : 
              		 					printf("\n Not a vlid choice !!!!");
                				  			break;
                				  }
-               				  break;
-             		 					
+             		 			break;		
               		 case 5:
              		 		display(root);
              				break;
