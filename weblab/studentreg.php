@@ -6,12 +6,13 @@
     <title>Rgister</title>
     <style>
     body{
-        margin: 50px;
+        margin: 0px; 
     }
     fieldset{
         border: 0;
         border-radius: 5px;
         background-color: rgb(187, 218, 242);
+        margin-top:30px;
         margin-left: 350px;
         margin-right: 350px;
         padding: 50px;
@@ -51,6 +52,9 @@
 </style>
 </head>
 <body>
+    <?php
+include('link.php');
+?>
     <center>
         <fieldset>
         <form action="" method="post">
@@ -59,21 +63,6 @@
         <tr>
                 <td colspan="2">
                     <input type="text" name="name" placeholder="Name" required>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="text" name="usrname" placeholder="Username" required>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="password" name="pswrd" Placeholder="Password" Maxlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8}" title="Must contain at least one number and one uppercase and lowercase letter and special character, and at least 8  characters" required>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="password" name="rpswrd" Placeholder="Re-Enter Password" Maxlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8}" title="Must contain at least one number and one uppercase and lowercase letter and special character, and at least 8  characters" required>
                 </td>
             </tr>
             <tr>
@@ -90,7 +79,12 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="text" name="phn" Placeholder="Phone" pattern="[0-9]{10}" Maxlength="10" required>
+                    <input type="text" name="ktuid" Placeholder="KTU ID" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="text" name="roll" Placeholder="Roll No" required>
                 </td>
             </tr>
             <tr>
@@ -102,32 +96,20 @@
                 </td>
             </tr>
         </table>
-        <P>
-            Already a user? <big><a href="login.php">Login Now</a></big>
-    </p>
 </form>
 </fieldset>
 </center>
-
 </body>
 </html>
 <?php
-    include('connection.php');
-    $uname=$_POST['usrname'];
+ include('connection.php');
     $name=$_POST['name'];
-    $pswd=$_POST['pswrd'];
-    $rpswd=$_POST['rpswrd'];
     $age=$_POST['age'];
-    $ph=$_POST['phn'];
     $g=$_POST['gender'];
+    $ktu=$_POST['ktuid'];
+    $roll=$_POST['roll'];
     $f=1;
-    if($pswd!=$rpswd)
-    {
-        echo "<script>alert('Password Missmatch');</script>";
-    }
-    else
-    {
-        $sel="select*from Login";
+      $sel="select*from student";
         $ss=mysqli_query($con,$sel);
         if($ss)
         {
@@ -135,26 +117,24 @@
             {
                  while($res=mysqli_fetch_array($ss))
                  { 
-                      if($res['Username']==$uname)
+                      if($res['Ktuid']==$ktu)
                      $f=0;
                   }
              }
             if($f!=0)
              {
-                  $insert="insert into Login values('$name','$uname','$pswd',$age,'$g','$ph')";
+                  $insert="insert into student values('$name',$age,'$g','$ktu',$roll)";
                  $i=mysqli_query($con,$insert);
                  if($i)
                  {
-                 echo "Succesfully Registered, Please Login";
-                 sleep(3);
-                 header("location:login.php");
+                 echo "<script>alert('Succesfully Registered');</script>";
                  }
         }
         else
-            echo "<script>alert('Sorry ,The userrname already exist, Try another');</script>";
+            echo "<script>alert('Sorry ,The KTU ID already exist, Try another');</script>";
     }
     else
             echo "<script>alert('Sorry, Try again');</script>";
-}
 
-?>
+
+?>  

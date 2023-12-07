@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>studdetails</title>
+    <title>Login</title>
     <style>
     body{
         margin: 50px;
@@ -68,7 +68,7 @@
             </tr>
             <tr>
                 <td> 
-                    <input type="submit" value="submit" name="sub" style="margin-left:15px;" >
+                    <input type="submit" value="Login" name="login" style="margin-left:15px;" >
             &nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;
                  <input type="reset" value="clear" style="margin-left:0px;">
@@ -83,6 +83,8 @@
     </html>
     <?php
     include('connection.php');
+if(isset($_POST['login']))
+{
     $uname=$_POST['usrname'];
     $pswd=$_POST['pswrd'];
     
@@ -102,8 +104,16 @@
              }
             if($f!=0)
              {
-                 
-                 echo "<script>alert('Succesfull  Login');</script>";
+                $sele="select*from Login where Username='$uname' and Password='$pswd'";
+                $s=mysqli_query($con,$sele);
+                $ress=mysqli_fetch_array($s);
+                session_start(); 
+                $_SESSION['username']=$ress['Username'];
+                $_SESSION['name']=$ress['Name'];
+                if($ress['Login_type']=='Admin')
+                    header("location:admindashboard.php");
+                
+                echo "<script>alert('Succesfull  Login');</script>";
              }
              else
              {
@@ -114,5 +124,5 @@
     else
             echo "<script>alert('Sorry, Try again');</script>";
 
-
+  }
 ?>
