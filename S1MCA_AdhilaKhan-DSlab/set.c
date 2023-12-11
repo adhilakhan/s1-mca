@@ -86,6 +86,38 @@ void complement(int us[],int bs1[],int bs2[],int un)
 			printf("%d \t",us[i]);
 	}
 }
+void setdiff(int us[],int bs1[],int bs2[],int un)
+{
+printf("\n set 1 - set 2 is : ");
+	for(int i=0;i<un;i++)
+	{
+		if((bs1[i]==1)&&(bs2[i]!=1))
+			{
+				printf("%d \t",us[i]);
+			}
+	}
+	printf("\n set 2 - set 1 is : ");
+	for(int i=0;i<un;i++)
+	{
+		if((bs1[i]==0)&&(bs2[i]==1))
+		{
+			printf("%d \t",us[i]);
+		}
+	}
+}
+void symmetricsetdiff(int us[],int bs1[],int bs2[],int un)
+{
+printf("\n Symmetric difference of set 1 and se t2  is : ");
+	for(int i=0;i<un;i++)
+	{
+		if(((bs1[i]==1)&&(bs2[i]==0))||((bs1[i]==0)&&(bs2[i]==1)))
+		{
+			printf("%d \t",us[i]);
+		}
+	}
+	
+}
+
 int main()
 {
 	int n1,n2,ch,un;
@@ -98,14 +130,14 @@ int main()
 	printf("\n Enter the size of the first set :");
 	scanf("%d",&n1);
 	int set1[n1];
-	printf("\n Enter the first set :");
+	printf("\n Enter the first set (Only the elemets from the univresalset) :");
 	insert(set1,n1);
 	printf("\n Enter the size of the second set :");
 	scanf("%d",&n2);
 	int set2[n2];
-	printf("\n Enter the second set :");
+	printf("\n Enter the second set (Only the elemets from the univresalset):");
 	insert(set2,n2);
-	printf("\n 1. Display Set \n 2. Display bitstring \n 3. Union \n 4. Intersection \n 5. Compliment \n 6. Set difference \n 8. Exit ");
+	printf("\n 1. Display Set \n 2. Display bitstring \n 3. Union \n 4. Intersection \n 5. Compliment \n 6. Set difference \n 7. Symmetric difference \n 8. Exit ");
 	do
 	{
 		 printf("\n Choose any one of the operation  : ");
@@ -140,10 +172,10 @@ int main()
 			case 6 : 
 					setdiff(u,bs1,bs2,un);
 					break;
-			case 7 : 
-					printf("\n Program terminated !!!!");
-					return 0;
-					
+			case 7 : 	symmetricsetdiff(u,bs1,bs2,un);
+					break;
+			case 8 : 	printf("\n Program terminated !!!!");
+					return 0;		
 			default : printf("\n Not a vlid choice !!!!");
                				  break;
                	}
