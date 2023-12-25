@@ -1,0 +1,3 @@
+from graphics.graphics_3D.cuboid import *
+b=int(input("Enter the breadth of the cuboid : "))
+print("Area of ractangle : ",area(l,b,h))
