@@ -20,6 +20,8 @@ struct node* insert(struct node *Root, int val)
 	
 	if(Root==NULL)
 		return create(val);
+	else if(val == Root->data)
+  		printf("Same data can't be stored");
 	else if(val>Root->data)
 		Root->right=insert(Root->right,val);
 	else
@@ -86,9 +88,55 @@ void postorder(struct node *Root)
 	}
 
 }
-delete(struct node *Root)
+struct node* minValueNode(struct node* Root)
+{
+   if(Root!=NULL)
+   {
+    struct node* current = Root;
+    while (current->left != NULL)
+        current = current->left;
+    return current;
+   }
+   return NULL;
+}
+struct node* delete(struct node *Root,int val)
 {
 
+	if(Root!=NULL)
+	{
+
+ 	if (val< Root->data)
+        Root->left = delete(Root->left,val);
+    else if (val > Root->data)
+        Root->right = delete(Root->right, val);
+    else {
+        // node with only one child or no child
+        if (Root->left == NULL) {
+            struct node* temp = Root->right;
+            free(Root);
+            return temp;
+        }
+        else if (Root->right == NULL) {
+            struct node* temp = Root->left;
+            free(Root);
+            return temp;
+        }
+        // node with two children: 
+        // Get the inorder successor
+        // (smallest in the right subtree)
+        struct node* temp = minValueNode(Root->right);
+ 
+        // Copy the inorder 
+        // successor's content to this node
+        Root->data = temp->data;
+ 
+        // Delete the inorder successor
+        Root->right = delete(Root->right, temp->data);
+    }
+    return Root;
+	}
+	else
+	 return NULL;
 }
 
 int main()
@@ -98,7 +146,7 @@ int main()
         struct node *root=NULL;
  	printf("\n BST\n");
 	printf("\n ----------------------------------------------\n");
-	printf(" 1. INSERT\n 2.DELETE\n 3. SEARCH \n 4. TRAVERSE \n 5. DISPLAY \n 6. EXIT \n");
+	printf(" 1. INSERT\n 2. DELETE\n 3. SEARCH \n 4. TRAVERSE \n 5. DISPLAY \n 6. EXIT \n");
 	do
 	{
 		 printf("\n Choose any one of the operation  : ");
@@ -114,20 +162,27 @@ int main()
 						insert(root,val);
              			    	break;
              		 case 2:
-             		 		printf("\n Enter the data : ");
-					scanf("%d",&val);	
-             		 		delete(root,val);
+					 		if(root==NULL)
+								printf("\n The BST is Empty!!\n");
+             		 		else
+							{
+             		 			printf("\n Enter the data : ");
+								scanf("%d",&val);	
+             		 			delete(root,val);
+							}
              				break;
              		 case 3:
              		 		if(root==NULL)
              		 			printf("\n The BST is Empty!!\n");
              		 		else
-						printf("\n Enter the data to be searched : ");
-						scanf("%d",&val);	
+							{
+								printf("\n Enter the data to be searched : ");
+								scanf("%d",&val);	
              		 			if(search(root,val)==NULL)
              		 				printf("\n Item not found");
              		 			else
              		 				printf("\n Item found");
+							}
              				break;
              		case 4:
              		 		printf("\n 1. Inorder \n 2. Preorder \n 3. Postorder\n Choose any one of the travesal option : ");
