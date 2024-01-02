@@ -16,4 +16,5 @@ F=open("new.csv","r")
 row=[]
 freader=csv.reader(F)
 for x in freader:
-    print(x)
+    if x!=[]:
+        print(x)
