@@ -136,7 +136,10 @@ struct node* delete(struct node *Root,int val)
     return Root;
 	}
 	else
-	 return NULL;
+	{
+		printf("\n No such Node in the BST");
+	 	return NULL;
+	}
 }
 
 int main()
@@ -168,7 +171,7 @@ int main()
 							{
              		 			printf("\n Enter the data : ");
 								scanf("%d",&val);	
-             		 			delete(root,val);
+             		 			root=delete(root,val);
 							}
              				break;
              		 case 3:
@@ -185,6 +188,10 @@ int main()
 							}
              				break;
              		case 4:
+							if(root==NULL)
+             		 			printf("\n The BST is Empty!!\n");
+             		 		else
+							{
              		 		printf("\n 1. Inorder \n 2. Preorder \n 3. Postorder\n Choose any one of the travesal option : ");
              		 		int op; 
            				scanf("%d",&op);
@@ -203,9 +210,13 @@ int main()
              		 					printf("\n Not a vlid choice !!!!");
                				  			break;
                				  }
+							}
              		 			break;		
               		 case 5:
-             		 		display(root);
+					 		if(root!=NULL)
+             		 			display(root);
+							else
+								printf("\n BST is empty");
              				break;
              		case 6: printf("\n Program exited !!!");
                  			 return 0;
@@ -214,4 +225,3 @@ int main()
                	}
              } while(1);
 }
-
